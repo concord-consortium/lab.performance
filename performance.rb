@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 #
 # file: performance.rb
-# location: https://gist.github.com/2026947
 #
 # For measuring performance of molecular simulation in this
 # project:  https://github.com/concord-consortium/lab

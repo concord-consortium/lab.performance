@@ -2,17 +2,15 @@ For measuring performance of molecular simulations in this project:  https://git
 
 Gem prequisites:
 
-  gem install selenium-webdriver
+    gem install selenium-webdriver
 
-Selenium WebDriver References:
-
-  http://code.google.com/p/selenium/wiki/RubyBindings
+Selenium WebDriver References: http://code.google.com/p/selenium/wiki/RubyBindings
 
 Installation:
 
 In your working copy of the Lab project:
 
-    git checkout git@github.com:concord-consortium/lab.performance.git
+    git checkout git://github.com/concord-consortium/lab.performance.git
 
 Edit paths in the script performance.rb to reference locations for FireFox and Chrome
 on your computer.
