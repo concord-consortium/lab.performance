@@ -12,26 +12,45 @@ In your working copy of the Lab project:
 
     git checkout git://github.com/concord-consortium/lab.performance.git
 
-Edit paths in the script performance.rb to reference locations for FireFox and Chrome
-on your computer.
+Create `./lab.performance/config.yml` by copying the sample and edit the result
+entering the locations for the browsers you want to test and the url for a runnable
+local copy of the Complex Atoms Model.
 
-Measuring performance:
+    cp ./lab.performance/config.sample.yml ./lab.performance/config.yml
+
+Example of measuring performance:
 
     $ ./lab.performance/performance.rb
 
-    browser: Chrome: 19.0.1085.0, Intel Mac OS X 10_6_8
-    Date: 2012-03-30 08:44
+    browser: Firefox: 12.0, Intel Mac OS X 10.6
+    Date: 2012-05-10 15:21
     Molecule number: 50
-    Temperature: 5
+    Temperature: 3
 
     git commit
-    commit 2c3a9328a43964485ed5f661cfb6e6cc6850ce95
+    commit 49850c073d221f56d5cff07ee231f470e69b91a7
     Author: Stephen Bannasch <stephen.bannasch@gmail.com>
-    Date:   Fri Mar 30 08:44:05 2012 -0400
+    Date:   Fri Mar 30 09:16:32 2012 -0400
 
-        whitespace fixups
+        readme: formatting updates, remove gist reference in script
     true
 
-    average steps                  167.30
-    average steps w/graphics       101.63
+    average steps                  180.14
+    average steps w/graphics       58.87
 
+    browser: Chrome: 18.0.1025.142, Intel Mac OS X 10_6_8
+    Date: 2012-05-10 15:21
+    Molecule number: 50
+    Temperature: 3
+
+    git commit
+    commit 49850c073d221f56d5cff07ee231f470e69b91a7
+    Author: Stephen Bannasch <stephen.bannasch@gmail.com>
+    Date:   Fri Mar 30 09:16:32 2012 -0400
+
+        readme: formatting updates, remove gist reference in script
+    true
+
+    average steps                  413.44
+    average steps w/graphics       156.87
+    
