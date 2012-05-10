@@ -27,14 +27,14 @@ require "selenium-webdriver"
 require 'fileutils'
 require 'yaml'
 
-PROJECT_ROOT = File.expand_path('../..',  __FILE__)
-
+PROJECT_ROOT = File.expand_path('../',  __FILE__)
+CONFIG_PATH = File.join(PROJECT_ROOT, 'config.yml')
 begin
-  CONFIG = YAML.load_file('config.yml')
+  CONFIG = YAML.load_file(CONFIG_PATH)
 rescue Errno::ENOENT
   msg = <<-HEREDOC
 
-*** missing config.yml
+*** missing #{CONFIG_PATH}
 
     cp config_sample.yml config.yml
 
@@ -52,6 +52,12 @@ drivers = {
 
 browsers_to_test = CONFIG[:browsers_to_test]
 URL_TO_COMPLEX_MODEL = CONFIG[:url]
+
+puts
+puts "*** git commit"
+puts
+puts `git log -1`
+puts
 
 browsers_to_test.each do |browser|
 
@@ -97,9 +103,6 @@ browsers_to_test.each do |browser|
   puts "Molecule number: #{data[4].text}"
   puts "Temperature: #{data[5].text}"
   puts
-  puts "git commit"
-  puts system("git log -1")
-  puts
 
   steps = steps_graphics = 0
 
@@ -120,3 +123,4 @@ browsers_to_test.each do |browser|
   puts sprintf("%-30s %.2f", "average steps w/graphics", steps_graphics_ave)
   driver.quit
 end
+puts
