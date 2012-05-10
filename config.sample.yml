@@ -1,0 +1,9 @@
+--- 
+:browsers_to_test: 
+- :path: /path/to/firefox
+  :driver: :firefox
+  :name: FireFox
+- :path: /path/to/Google Chrome
+  :driver: :chrome
+  :name: Chrome
+:url: http://url/to/examples/complex-atoms-model/complex-atoms-model.html
