@@ -64,6 +64,8 @@ browsers_to_test.each do |browser|
   drivers[browser[:driver]].path = browser[:path]
   driver =  Selenium::WebDriver.for browser[:driver]
 
+  driver.manage.window.resize_to(1280, 800)
+
   driver.navigate.to URL_TO_COMPLEX_MODEL
 
   Selenium::WebDriver::Support::Select.new(driver.find_element(:id, 'select-molecule-number')).select_by(:value, "50")
@@ -84,7 +86,7 @@ browsers_to_test.each do |browser|
   # turn off temperature control
   temperature_control = driver.find_element(:id, 'temperature-control-checkbox')
   temperature_control.click if temperature_control.attribute('checked') == "true"
-  sleep 1
+  sleep 2
 
   benchmark_button = driver.find_element(:id, 'start-benchmarks')
   10.times { 
